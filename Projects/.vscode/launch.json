@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - play",
+            "request": "launch",
+            "mainClass": "play",
+            "projectName": "NimGame"
+        }
+    ]
+}
