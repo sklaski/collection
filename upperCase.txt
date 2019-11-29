@@ -1,0 +1,20 @@
+public class JadenCase {
+
+	public String toJadenCase(String phrase) {
+		// TODO put your code below this comment
+		if (phrase == null || phrase.isEmpty()) {
+      return null;
+    }
+    
+    String returnphrase = "";
+    
+    for (String word : phrase.split(" ")) {
+      if (returnphrase != "") {
+        returnphrase += " ";
+      }
+      returnphrase += word.toUpperCase().charAt(0) + word.substring(1);
+    }
+    return returnphrase;
+	}
+
+}

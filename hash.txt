@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class FindOdd {
+	public static int findIt(int[] a) {
+    //create HashMap
+    HashMap<Integer, Integer> OddTest = new HashMap<Integer, Integer>(); //create Hash
+    for (int number: a) { //go through a[]  
+      if ( !OddTest.containsKey(number) ) { //set 0 if null
+        OddTest.put(number, 0);
+      }      
+      OddTest.put(number, OddTest.get(number) + 1 ); //value++
+    }
+    for (int i : OddTest.keySet()) {
+      if (OddTest.get(i) % 2 == 1) {
+        return i;
+      }
+    }
+  	return 0;
+  }
+}
