@@ -13,9 +13,18 @@ public class Play {
 	}
 
 	private static void initialize() {
-		// for start have a fixed size for first pile
-		stackOfPiles.add(new Pile(12));
-		stackOfPiles.add(new Pile(3));
+		int pileSize = 0;
+		while (pileSize == 0) {
+			System.out.print("Please enter size of pile: ");
+
+			try {
+				pileSize = IO.getStdinScanner().nextInt();
+			} catch (InputMismatchException e) {
+				IO.getStdinScanner().next();
+			}
+		}
+		stackOfPiles.add(new Pile(pileSize));
+
 	}
 
 	private static void doRounds() {
@@ -26,7 +35,7 @@ public class Play {
 	}
 
 	private static void checkPiles() {
-		for (int i = stackOfPiles.size() -1; i >= 0; i--) {
+		for (int i = stackOfPiles.size() - 1; i >= 0; i--) {
 			if (stackOfPiles.get(i).getPileSize() <= 2) {
 				stackOfPiles.remove(i);
 			}
@@ -58,7 +67,7 @@ public class Play {
 			} catch (InputMismatchException e) {
 				IO.getStdinScanner().next();
 			}
-			pick = splitter.split("/");
+			pick = splitter.split("/");			
 			boolean pileValueOK = false;
 			for (int i = 0; i < stackOfPiles.size(); i++) {
 				if (Integer.parseInt(pick[1]) == stackOfPiles.get(i).getPileSize()) {
@@ -79,7 +88,7 @@ public class Play {
 
 		}
 		for (int i = 0; i < stackOfPiles.size(); i++) {
-			if(stackOfPiles.get(i).getPileSize() == Integer.parseInt(pick[1])) {
+			if (stackOfPiles.get(i).getPileSize() == Integer.parseInt(pick[1])) {
 				stackOfPiles.remove(i); // remove pile of choice
 				break;
 			}
