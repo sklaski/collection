@@ -1,9 +1,17 @@
 
 public class Pile {
-	private Long size;
+	private int pileSize;
 
-	public Pile(Long size) {
-		super();
-		this.size = size;
+	public Pile (int pileSize) {
+		this.pileSize = pileSize;
+	}
+
+	public int getPileSize() {
+		return pileSize;
+	}
+
+	@Override
+	public String toString() {
+		return "Pile [pileSize=" + pileSize + "]";
 	}
 }
