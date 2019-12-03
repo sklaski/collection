@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Swim",
+            "request": "launch",
+            "mainClass": "Swim",
+            "projectName": "BonusChallenge_Aquariam (2)"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - play",
             "request": "launch",
             "mainClass": "play",

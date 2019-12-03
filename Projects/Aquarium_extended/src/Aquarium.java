@@ -51,7 +51,6 @@ public class Aquarium {
 	}
 	
 	private void addRandomFish() {
-		int Y = new Random().nextInt(getHeight());
 		int chance = new Random().nextInt(4) + 1;
 //		chance = 7; //only "normal" fish
 		switch (chance) {

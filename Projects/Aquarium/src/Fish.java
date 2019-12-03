@@ -2,7 +2,6 @@ public class Fish {
 
 	private int positionX;
 	private int positionY;
-	private int changeRow;
 	private boolean direction;
 	
 	public Fish(int positionX, int positionY, boolean direction) {
