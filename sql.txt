@@ -1,0 +1,73 @@
+create database (
+	id varchar not null auto_increment primary key,
+	second int);
+
+insert into table
+
+delete from table
+
+drop //caution!!!
+
+//empty table
+truncate table; //double caution!!!
+
+//change table propterties
+ALTER TABLE `wild_db_quest`.`wizard` 
+CHANGE COLUMN `firstname` `firstname` VARCHAR(80) NOT NULL ,
+CHANGE COLUMN `lastname` `lastname` VARCHAR(80) NOT NULL ;
+
+//remove a column
+ALTER TABLE "table_name" DROP COLUMN "column_name"; 
+
+//joins
+select w.lastname, w.firstname from wizard w 
+left join player p on p.wizard_id=w.id 
+WHERE p.id IS NULL; 
+
+'Boot', 'Terry'
+'', 'Crabbe'
+'Lupin', 'Remus'
+'Patil', 'Padma'
+'Patil', 'Parvati'
+
+
+select lastname, firstname, player.role from wizard
+join player on wizard_id = wizard.id
+where role = 'seeker'
+order by lastname, firstname;
+
+'Binns', 'Cuthbert', 'seeker'
+'Corner', 'Michael', 'seeker'
+
+
+select lastname, firstname, role, team.name from wizard
+join player on wizard.id = player.wizard_id
+join team on team.id = player.team_id
+ORDER BY team.name, lastname, firstname;
+
+'', 'Cadogan', 'keeper', 'Gryffindor'
+'Bell', 'Katie', 'chaser', 'Gryffindor'
+'Binns', 'Cuthbert', 'seeker', 'Gryffindor'
+
+//group by
+select t.name, count(*) from player p
+join team t on t.id = p.team_id
+group by p.team_id;
+
+SELECT w.lastname, w.firstname, p.enrollment_date, t.name FROM player p
+JOIN wizard w ON w.id = p.wizard_id
+JOIN team t ON t.id = p.team_id
+WHERE weekday(p.enrollment_date) = 0 and p.team_id = 1
+ORDER BY p.enrollment_date;
+
+'Weasley', 'George', '1991-08-26', 'Gryffindor'
+'Longbottom', 'Alice', '1992-02-17', 'Gryffindor'
+'', 'Cadogan', '1993-01-04', 'Gryffindor'
+
+//Arrays
+Select name,country from travelers where country not in ('Canada','Mexico','USA')
+
+//select conditional
+select (case when sum(number1) % 2 = 0 then max(number1) else min(number1) end) number1, 
+  (case when sum(number2) % 2 = 0 then max(number2) else min(number2) end) number2
+from numbers
