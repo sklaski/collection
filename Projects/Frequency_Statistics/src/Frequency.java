@@ -4,10 +4,9 @@ public class Frequency {
 	private String string;
 	private int count;
 	
-	public Frequency(String string, int count) {
+	public Frequency(String string) {
 		super();
 		this.string = string;
-		this.count = count;
 	}
 
 	public int getCount() {
@@ -21,5 +20,9 @@ public class Frequency {
 	public String getString() {
 		return string;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Frequency [string=" + string + ", count=" + count + "]";
+	}
 }
