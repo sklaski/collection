@@ -51,7 +51,7 @@ public class Aquarium {
 	}
 	
 	private void addRandomFish() {
-		int chance = new Random().nextInt(4) + 1;
+		int chance = new Random().nextInt(5) + 1;
 //		chance = 7; //only "normal" fish
 		switch (chance) {
 		case 1:
@@ -62,6 +62,9 @@ public class Aquarium {
 			break;
 		case 3:
 			addSwordfish();
+			break;
+		case 4:
+			addKrill();
 			break;
 		default:
 			addFish();
@@ -81,6 +84,11 @@ public class Aquarium {
 
 	private void addBlowfish() {
 		Fish fish = new Blowfish(randomX(), randomY(), randomDirection());
+		fishInRow.add(fish);
+	}
+
+	private void addKrill() {
+		Fish fish = new Krill(randomX(), randomY(), randomDirection());
 		fishInRow.add(fish);
 	}
 
