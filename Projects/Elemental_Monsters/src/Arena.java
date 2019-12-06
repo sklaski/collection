@@ -12,9 +12,9 @@ public class Arena {
 
 		// some monsters to work with!
 		combatants.add(new GrassMonster("First", 15, 60));
-//		combatants.add(new FireMonster("Second", 22, 40));
-//		combatants.add(new WaterMonster("Third", 9, 200));
-//		combatants.add(new FireMonster("Forth", 32, 35));
+		combatants.add(new FireMonster("Second", 22, 40));
+		combatants.add(new WaterMonster("Third", 9, 200));
+		combatants.add(new FireMonster("Forth", 32, 35));
 		combatants.add(new WaterMonster("Cheater", 42, 400));
 		while (true) {
 			doRound();
@@ -157,7 +157,7 @@ public class Arena {
 				if (combatants.get(i).getLife() <= 0) { // remove dead monsters
 					combatants.remove(i);
 				} else {
-					combatants.get(i).setLife((int) (combatants.get(i).getLife() * 1.5)); // regenerate 50% of current
+					combatants.get(i).setLife((int) (combatants.get(i).getLife() * 1.2)); // regenerate 20% of current
 																							// life
 					if (combatants.get(i).getMaxLife() < combatants.get(i).getLife()) { // clear "too much" hit points
 						combatants.get(i).setLife(combatants.get(i).getMaxLife());

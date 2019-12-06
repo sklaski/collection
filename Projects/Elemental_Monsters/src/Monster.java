@@ -16,15 +16,15 @@ public class Monster {
 		switch (type) {
 		case "Fire":
 			vulnerability = "Water";
-			healingFactor = 0.3f;
+			healingFactor = 0.1f;
 			break;
 		case "Water":
 			vulnerability = "Grass";
-			healingFactor = 0.2f;
+			healingFactor = 0.05f;
 			break;
 		case "Grass":
 			vulnerability = "Fire";
-			healingFactor = 0.1f;
+			healingFactor = 0.01f;
 			break;
 		default:
 			vulnerability = "";
