@@ -5,21 +5,20 @@ import java.util.List;
 
 public class Josephus {
 	public static <T> List<T> josephusPermutation(final List<T> items, final int k) {
-		System.out.println(items);
-		List<T> killedOrder = new List<T>();
-		//ArrayList<String> killedOrder = new ArrayList<String>();
-		int toKill = k - 1;
-		while (!items.isEmpty()) {
-			killedOrder.add((String) items.get(toKill));
-			items.remove(toKill);
-			toKill += k;
-			System.out.println(items);
-			System.out.println(killedOrder);
-			if (toKill > items.size()) {
-				toKill -= items.size();
+		System.out.println(items + ", " + k);
+		List<T> out = new ArrayList<T>();
+		int counter = k - 1;
+		while (items.size() >= 1) {
+//			System.out.println(items);
+			while (counter >= items.size()) {
+				counter -= items.size();
 			}
-
+			out.add(items.remove(counter));
+			counter += k - 1;
+//			System.out.println(out.toString());
+//			System.out.println(counter + " " + items.size());
 		}
-		return killedOrder;
+		System.out.println("End: " + out.toString());
+		return out;
 	}
 }

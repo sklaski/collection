@@ -4,7 +4,6 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
 import org.junit.Test;
 
@@ -35,7 +34,8 @@ public class JosephusTest {
         josephusTest(new Object[]{}, 3, new Object[]{});
     }
 
-    private void josephusTest(final Object[] items, final int k, final Object[] result) {
+    @SuppressWarnings("unchecked")
+	private void josephusTest(final Object[] items, final int k, final Object[] result) {
         assertThat(Josephus.josephusPermutation(new ArrayList(Arrays.asList(items)), k), is(Arrays.asList(result)));
     }
 }
