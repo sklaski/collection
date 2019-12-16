@@ -4,8 +4,8 @@ import java.util.Random;
 public class Swim {
 
 	public static void main(String[] args) {
-		int numberOfFishes = 3000;
-		Aquarium Tank = new Aquarium(120, 25, 50); // (width, height, numberOfFishies
+		int numberOfFishes = 1000;
+		Aquarium Tank = new Aquarium(120, 25, 100); // (width, height, numberOfFishies
 //		System.out.println(Tank);
 		while (true) {
 			showAqua(Tank);
