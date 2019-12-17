@@ -2,8 +2,6 @@ package parseMolecule;
 import java.util.*;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.runners.JUnit4;
-
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -14,7 +12,8 @@ public class SolutionTest {
     
     @Parameters
     public static Collection<Object[]> data() {
-        return Arrays.asList( new Object[][] { {Arrays.asList("H", "O"),
+        return Arrays.asList( new Object[][] { 
+        										{Arrays.asList("H", "O"),
                                                 Arrays.asList( 2,   1 ),
                                                 "H2O",
                                                 "water"},
@@ -28,6 +27,12 @@ public class SolutionTest {
                                                 Arrays.asList( 4,   14,  2,   4 ),
                                                 "K4[ON(SO3)2]2",
                                                 "Fremy's salt"},
+                                               
+                                               
+                                               {Arrays.asList("P", "C", "Pd", "H"),
+                                                    Arrays.asList( 4,   72,  1,   60 ),
+                                                    "Pd[P(C6H5)3]4",
+                                                    "tetrakis(triphenylphosphine)palladium(0)"},
                               });
     }
     
