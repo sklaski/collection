@@ -4,8 +4,8 @@ import java.util.Random;
 public class Swim {
 
 	public static void main(String[] args) {
-		int numberOfFishes = 1000;
-		Aquarium Tank = new Aquarium(120, 25, 100); // (width, height, numberOfFishies
+		int numberOfFishes = 3000;
+		Aquarium Tank = new Aquarium(120, 25, 50000); // (width, height, numberOfFishies
 //		System.out.println(Tank);
 		while (true) {
 			showAqua(Tank);
@@ -13,7 +13,7 @@ public class Swim {
 			yChangeByChance(Tank);
 			getNewFish(Tank, numberOfFishes);
 			try {
-				Thread.sleep(200);
+				Thread.sleep(250);
 			} catch (InterruptedException e) {
 				System.out.println("ERROR for sleep");
 			}
