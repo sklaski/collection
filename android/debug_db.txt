@@ -1,0 +1,12 @@
+https://github.com/amitshekhariitbhu/Android-Debug-Database
+
+Installation
+Add this to your app's build.gradle
+// debugging database
+//debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+debugImplementation 'com.amitshekhar.android:debug-db-encrypt:1.0.6'
+
+Working with emulator
+Android Default Emulator: Run the command in the terminal -
+adb forward tcp:8080 tcp:8080 
+
